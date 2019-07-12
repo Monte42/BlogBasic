@@ -1,5 +1,5 @@
 # BlogBasic
-Illustrating the use of NodeJs to achieve a basic blog site.
+Illustrating the use of NodeJs and MongoDb to achieve a basic blog site.
 
 
 To View Site
