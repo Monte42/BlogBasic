@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+<div class="ui container">
+  <div class="ui aligned center header mainHeader">
+    <h1>Topics</h1>
+  </div>
+  <h3>Choose or Create a Topic</h3>
+  <div class="ui container segment">
+    <% topics.forEach(function(topic){ %>
+      <div class="ui container segement">
+        <h4 id='secHeader'><%= topic.title %></h4>
+        <p><%= topic.desc %></p>
+        <a class='mini ui inverted primary button' href="/topics/<%= topic._id %>">Read More</a>
+        <hr>
+      </div>
+    <% }) %>
+    </div>
+  </div>
+  <div class="ui aligned right container">
+    <a class="ui inverted green button" href="/topics/new">Create New Topic</a>
+  </div>
+</div>
+
+<% include ../partials/footer %>

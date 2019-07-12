@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div class="ui container segment">
+  <div class="ui header">
+    <h1>Edit Comment for <strong><%= blog.title %></strong></h1>
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui main container">
+    <form action="/topics/<%= topic.id %>/blogs/<%= blog.id %>/comments/<%= comment.id %>?_method=PUT" method="POST">
+      <div class="ui label">
+        <p>Comment</p>
+      </div>
+      <div class="ui input">
+        <input type="text" name="text" value="<%= comment.text %>">
+      </div><br>
+      <input type="submit" value="Post">
+    </form>
+  </div>
+
+</div>
+
+<% include ../partials/footer %>

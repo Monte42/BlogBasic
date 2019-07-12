@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+<div class="ui container">
+  <h1>This blog is from <%= topic.title %></h1>
+  <div class="ui container segment">
+    <div class="ui header">
+      <%= blog.title %>
+    </div>
+      <img class="ui fluid image" src="<%= blog.image %>" alt="">
+    <div class="ui text container">
+      <p><%= blog.content %></p>
+    </div>
+    <div class="ui divider"></div>
+    <% if(currentUser && blog.author.id.equals(currentUser._id)){ %>
+      <a class='mini ui orange button' href="/topics/<%= topic.id %>/blogs/<%= blog.id %>/edit">Edit</a>
+      <form action="/topics/<%= topic.id %>/blogs/<%= blog.id %>?_method=DELETE" method="POST">
+        <button class="ui floated right mini red button">Delete</button>
+      </form>
+    <% } %>
+    <h4 class="ui right aligned container"><em>~<%= blog.author.username %></em></h4>
+  </div>
+  <div class="ui container segment">
+    <% blog.comments.forEach(function(comment){ %>
+        <div class="ui container segment">
+          <p>
+              <strong>~<%= comment.author.username %></strong> - <%= comment.text %>
+          </p>
+          <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+            <a class='mini ui orange button' href="/topics/<%= topic._id %>/blogs/<%= blog._id %>/comments/<%= comment.id %>/edit">Edit</a>
+            <form action="/comments/<%= comment.id %>?_method=DELETE" method="POST">
+              <input class='ui mini red button' type="submit" value="Delete">
+            </form>
+          <% } %>
+        </div>
+    <% }) %>
+    <button type="button"><a href="/topics/<%= topic.id %>/blogs/<%= blog._id %>/comments/new">Create Comment</a></button>
+  </div>
+
+</div>
+
+<% include ../partials/footer %>

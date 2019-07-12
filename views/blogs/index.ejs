@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+      <h1><%= topic.title %></h1>
+      <h1>here</h1>
+      <% blogs.forEach(function(blog){ %>
+              <div class="ui card">
+                  <div class="content">
+                     <div class="header">
+                        <h4><%= blog.title %></h4>
+                     </div>
+                     <div class="meta">2 days ago</div>
+                        <div class="description">
+                          <img class='ui fluid image' src="<%= image %>" alt="">
+                          <h5><em><%= blog.author %></em></h5>
+                        </div>
+                      </div>
+                      <div class="extra content">
+                        <button class="ui left floated button"><a href="/topics/blogs/<%= blog._id %>">Learn More</a></button>
+                      </div>
+                  </div>
+              </div>
+        <% }); %>
+
+<% include ../partials/footer %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    <%  if(error){ %>
+      <div class="ui container">
+          <h1><%= error %></h1>
+      </div>
+    <% } %>
+    <div class="ui container">
+      <div class="ui aligned center container segment">
+        <h1>Register for SteepBlog!</h1>
+        <form action="/signup" method="POST">
+          <div class="ui label">
+            <p>Username: </p>
+          </div>
+          <input type="text" name="username" placeholder="Username"><br>
+          <div class="ui label">
+            <p>Password: </p>
+          </div>
+          <input type="password" name="password" placeholder="Password"><br>
+          <input type="submit" value="Sign up">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

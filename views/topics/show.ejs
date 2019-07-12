@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+<div class="ui container">
+  <div class="ui aligned right contanier">
+    <div class="ui aligned center header mainHeader">
+
+    </div>
+  </div>
+  <h1><%= topic.title %></h1>
+  <div class="ui container">
+    <% topic.blogs.forEach(function(blog){ %>
+        <div class="ui container segment">
+          <h4><%= blog.title %></h4>
+            <div class="topicShowBlog">
+              <p class='topicShowDesc'><%= blog.content %></p>
+              <h5 class='ui floated right'><em>~<%= blog.author.username %></em></h5>
+            </div>
+          <button type="button"><a href="/topics/<%= topic._id %>/blogs/<%= blog._id %>">Read More</a></button>
+        </div>
+    <% }) %>
+  </div>
+  <div class="ui right aligned container">
+    <a class='ui button' href="/topics/<%= topic.id %>/blogs/new"> Create Blog</a>
+  </div>
+  </div>
+</div>
+
+
+<% include ../partials/footer %>

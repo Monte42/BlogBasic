@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Monte</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    <div class="ui secondary pointing menu">
+      <div class="ui item">
+        <h5>SteepBlog!</h5>
+      </div>
+        <a class="item" href="/topics">
+          Home
+        </a>
+        <a class="item" href="/about">
+          About Site
+        </a>
+        <a class="item" href="/topics/new">
+          Create Topic
+        </a>
+        <div class="right menu">
+          <p class="item">Signed In As <%= currentUser.username %></p>
+          <a class="item" href="/logout">Logout</a>
+        </div>
+    </div>

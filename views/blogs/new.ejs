@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+      <h1 style="text-align: center">Create a New Blog</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/topics/<%= topic._id %>/blogs" method="POST">
+              <div class="ui label">
+                <p>Title</p>
+              </div>
+              <div class="ui input">
+                <input type="text" name="blog[title]" placeholder="Title">
+              </div><br>
+              <div class="ui label">
+                <p>Image</p>
+              </div>
+              <div class="ui input">
+                <input type="text" name="blog[image]" placeholder="Image">
+              </div>
+
+              <h6>Please use images from the web.  You can upload and image to a free sever then copy and paste the URL </h6>
+
+              <textarea name="blog[content]" rows="10" cols="100"></textarea>
+              <input type="submit" value="Create" onclick="goBack()">
+            </form>
+        </div>
+
+<% include ../partials/footer %>

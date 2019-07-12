@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+
+<div class="ui container">
+  <form action="/topics" method="post">
+    <div class="ui label">
+      <p>Topic Title</p>
+    </div>
+    <div class="ui input">
+      <input type="text" name="topic[title]" placeholder="Title">
+    </div><br>
+    <div class="ui label">
+      <p>Description</p>
+    </div>
+    <div class="ui input">
+      <input type="text" name="topic[desc]" placeholder="Description">
+    </div><br>
+    <input type="submit" value="Post">
+  </form>
+</div>
+
+<% include ../partials/footer %>
